@@ -2,7 +2,6 @@
     <x-slot name="title">
         Movie
     </x-slot>
-
     <div class="list-movie">
         @foreach($data as $row)
             <div class="movie">
