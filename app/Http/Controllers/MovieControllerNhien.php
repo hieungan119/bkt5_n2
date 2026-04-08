@@ -20,7 +20,7 @@ class MovieControllerNhien extends Controller
     function detail($id)
     {
     $results = DB::select("select * from movie where id = ?", [$id]);    
-    $data = collect($results)->first(); 
+    $data = collect($results)->first();  // Lấy phần tử đầu tiên từ kết quả truy vấn
     if (!$data) {
         abort(404);
     }
