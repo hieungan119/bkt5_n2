@@ -5,16 +5,43 @@
     <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
   <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap4.js"></script>
   <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap4.css">
+  <style>
+    .dt-custom-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .btn-add-green {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .btn-add-green:hover {
+      background-color: #218838;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
 
     <div style='text-align:center;font-weight:bold'>DANH SÁCH PHIM</div>
+    <div class="dt-custom-buttons">
+      <a href="{{ route('admin.create') }}" class="btn-add-green">
+        <i></i> Thêm
+      </a>
+    </div>
     <table id = "movie-table" class="table table-bordered">
         <thead>
             <tr>
                 <th>Ảnh đại diện</th>
                 <th>Tiêu đề</th>
-                <th>Mô tả</th>
+                <th>Giới thiệu</th>
                 <th>Ngày phát hành</th>
-                <th>Điểm bình chọn</th>
+                <th>Điểm đánh giá</th>
                 <th>
             </tr>
         </thead>

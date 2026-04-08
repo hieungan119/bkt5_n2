@@ -12,7 +12,6 @@ Route::get('/', [App\Http\Controllers\MovieController::class, 'index']);
 
 Route::get('/movie/list', [App\Http\Controllers\ManagementController::class, 'movie_list']);
 Route::post('/movie/delete/{id}', [App\Http\Controllers\ManagementController::class, 'movie_delete']);
-=======
 Route::get('/', [MovieController4::class, 'index']);
 
 Route::get('/test', function () {
