@@ -6,11 +6,18 @@ use App\Http\Controllers\AddMovieController;
 use App\Http\Controllers\MovieController4;
 use App\Http\Controllers\MovieControllerNhien;
 
+
+Route::get('/', [App\Http\Controllers\MovieController::class, 'index']);
+
+Route::get('/movie/list', [App\Http\Controllers\ManagementController::class, 'movie_list']);
+Route::post('/movie/delete/{id}', [App\Http\Controllers\ManagementController::class, 'movie_delete']);
+=======
 Route::get('/', [MovieController4::class, 'index']);
 
 Route::get('/test', function () {
     phpinfo();
 });
+
 
 Route::get('/openrouter', [OpenRouterController::class, 'chat']);
 
