@@ -2,11 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OpenRouterController;
-
-Route::get('/', [App\Http\Controllers\MovieController::class, 'index']);
-
-
+use App\Http\Controllers\MovieController4;
+use App\Http\Controllers\MovieControllerNhien;
 
 Route::get('/openrouter', [OpenRouterController::class, 'chat']);
-Route::get('/home','App\Http\Controllers\MovieControllerNhien@index');
-Route::get('home/detail/{id}','App\Http\Controllers\MovieControllerNhien@detail');
+
+Route::get('/', [MovieController4::class, 'index']);
+Route::match(['GET', 'POST'], '/timkiem', [MovieController4::class, 'search']);
+
+Route::get('/home', [MovieControllerNhien::class, 'index']);
+Route::get('/home/detail/{id}', [MovieControllerNhien::class, 'detail']);
