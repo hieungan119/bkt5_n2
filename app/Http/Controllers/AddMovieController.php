@@ -16,6 +16,7 @@ class AddMovieController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'original_name'   => 'required',
             'movie_name_en'   => 'required',
             'movie_name_vn'   => 'required',
             'release_date'    => 'required|date_format:Y-m-d',
@@ -38,7 +39,7 @@ class AddMovieController extends Controller
         $request->file('image')->storeAs('', $imageName, 'public');
 
         DB::table('movie')->insert([
-            'movie_name_en' => $request->movie_name_en,
+            'movie_name' => $request->movie_name_en,
             'movie_name_vn' => $request->movie_name_vn,
             'release_date'  => $request->release_date,
             'overview'      => $request->overview,

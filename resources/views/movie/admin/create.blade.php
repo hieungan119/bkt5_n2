@@ -51,7 +51,6 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Lưu</button>
-            <a href="/admin/movie" class="btn btn-secondary">Quay lại</a>
         </form>
     </div>
 </x-movie-layout>

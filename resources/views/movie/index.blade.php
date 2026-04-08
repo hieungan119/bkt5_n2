@@ -6,7 +6,7 @@
     <div class="list-movie">
         @foreach($data as $row)
             <div class="movie">
-                <a href="#">
+                <a href="{{ url('/detail/' . $row->id) }}">
                     <img src="{{ asset('storage' . $row->image) }}" width="200" height="300">
                     <br>
                     <b>{{ $row->movie_name_vn }}</b>
