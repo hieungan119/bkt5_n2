@@ -9,8 +9,4 @@ Route::get('/openrouter', [OpenRouterController::class, 'chat']);
 
 Route::get('/', [MovieController4::class, 'index']);
 
-Route::get('/theloai/{id}', [MovieController4::class, 'genre']);
-
-Route::post('/timkiem', [MovieController4::class, 'search'])->name('search');
-
-Route::get('/phim/{id}', [MovieController4::class, 'show']);
+Route::match(['GET', 'POST'], '/timkiem', [MovieController4::class, 'search']);
