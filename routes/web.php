@@ -2,22 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OpenRouterController;
-use App\Http\Controllers\AddMovieController;
-use App\Http\Controllers\MovieController4;
-use App\Http\Controllers\MovieControllerNhien;
 
-Route::get('/', [MovieController4::class, 'index']);
+Route::get('/', [App\Http\Controllers\MovieController::class, 'index']);
 
-Route::get('/test', function () {
-    phpinfo();
-});
+
 
 Route::get('/openrouter', [OpenRouterController::class, 'chat']);
+use App\Http\Controllers\MovieController;
 
-Route::get('/movie/admin/create', [AddMovieController::class, 'create'])->name('admin.create');
-Route::post('/movie/admin/store', [AddMovieController::class, 'store'])->name('admin.store');
 
-Route::match(['GET', 'POST'], '/timkiem', [MovieController4::class, 'search']);
+Route::get('/movies', [MovieController::class, 'index']);
+Route::get('/movies', [MovieController::class, 'index'])->name('movies.index');
 
-Route::get('/home', [MovieControllerNhien::class, 'index']);
-Route::get('/home/detail/{id}', [MovieControllerNhien::class, 'detail']);
+
+
+
+Route::get('/', [MovieController::class, 'index']);
+
+
+Route::get('/', [MovieController::class, 'index']);
+Route::get('/theloai/{id}', [MovieController::class, 'getMoviesByGenre']);
