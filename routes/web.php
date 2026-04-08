@@ -8,17 +8,5 @@ Route::get('/', [App\Http\Controllers\MovieController::class, 'index']);
 
 
 Route::get('/openrouter', [OpenRouterController::class, 'chat']);
-use App\Http\Controllers\MovieController;
-
-
-Route::get('/movies', [MovieController::class, 'index']);
-Route::get('/movies', [MovieController::class, 'index'])->name('movies.index');
-
-
-
-
-Route::get('/', [MovieController::class, 'index']);
-
-
-Route::get('/', [MovieController::class, 'index']);
-Route::get('/theloai/{id}', [MovieController::class, 'getMoviesByGenre']);
+Route::get('/home','App\Http\Controllers\MovieControllerNhien@index');
+Route::get('home/detail/{id}','App\Http\Controllers\MovieControllerNhien@detail');
